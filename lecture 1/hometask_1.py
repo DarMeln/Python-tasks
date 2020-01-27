@@ -2,8 +2,8 @@
 #Task 1
 def capName(name):
     S = name.split() #by default, any whitespaces is a separator
-    S[0] = S[0][0].upper() + S[0][1:] #Capitalizing the first letters
-    S[1] = S[1][0].upper() + S[1][1:] #if numbers - it will stay the same
+    for i in range(len(S)): #if 'for i in S' then S will not change
+        S[i] = S[i][0].upper() + S[i][1:]
     return ' '.join(S)
 
 #Task 2
@@ -47,6 +47,7 @@ def highestVals(d):
     for i in range(3):
         maximums.append(max(vals))
         vals.remove(max(vals))
+        if not vals: break #if empty
     return maximums
 
 #Task 9
